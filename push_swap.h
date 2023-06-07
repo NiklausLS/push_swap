@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/07 15:39:35 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/07 17:17:52 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,11 @@ typedef struct s_list {
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstnew(int *data);
+t_list	*ft_lstnew(int data);
 int		ft_lstsize(t_list *lst);
 
 int		main(int argc, char **argv);
-t_list	init_stack(int argc, char **argv);
-void	new_node(t_list **head, int nbr);
+void	init_stack(int argc, char **argv, t_list **stack);
 
 //my functions to checks errors
 int		check_doubles(t_list *stack);

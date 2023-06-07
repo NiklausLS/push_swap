@@ -6,21 +6,21 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 10:24:55 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/07 09:45:53 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/07 17:18:40 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 //#include <stdio.h>
 
-t_list	*ft_lstnew(int *data)
+t_list	*ft_lstnew(int data)
 {
 	t_list	*new;
 
 	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
-	new->data = *data;
+	new->data = data;
 	new->next = NULL;
 	return (new);
 }

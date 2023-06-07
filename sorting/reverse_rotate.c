@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:19:20 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/07 15:26:55 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/07 16:50:43 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	rrr(t_list **stack_a, t_list **stack_b)
 	reverse_rotate(stack_b);
 	write(1, "rrr\n", 4);
 }
-
+/*
 int main()
 {
 	t_list *stack_a = NULL;
@@ -98,4 +98,4 @@ int main()
 		current_a = current_a->next;
 	}
 	return (0);
-}
+}*/

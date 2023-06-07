@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:18:51 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/07 14:58:52 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/07 16:40:23 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	rr(t_list **stack_a, t_list **stack_b)
 	rb(stack_b);
 	write(1, "rr\n", 3);
 }
-
+/*
 int main()
 {
 	t_list *stack_a = NULL;
@@ -99,4 +99,4 @@ int main()
 		current_a = current_a->next;
 	}
 	return (0);
-}
+}*/
