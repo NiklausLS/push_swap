@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:02:57 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/09 16:37:06 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/09 17:01:36 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	check_sorting(t_list *stack)
 	{
 		if (stack->data > stack->next->data)
 		{
-			printf("sorting not OK");
+			printf("---- sorting not done ----\n");
 			return (0);
 		}
 		stack = stack->next;
 	}
-		printf("sorting OK\n");
+		printf("---- sorting OK ----\n");
 	return (1);	
 }
