@@ -6,23 +6,26 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 11:04:26 by nileempo          #+#    #+#              #
-#    Updated: 2023/06/07 12:38:44 by nileempo         ###   ########.fr        #
+#    Updated: 2023/06/09 08:50:18 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = main.c \
+	  	init_stack.c \
 	  	./utils/ft_lstnew.c \
 	  	./utils/ft_lstadd_back.c \
 		./utils/ft_lstadd_front.c \
 		./utils/ft_lstsize.c \
 		./utils/ft_lstlast.c \
-		init_stack.c \
 		./errors_checking/check_errors.c \
 		./errors_checking/check_args.c \
 		./printing/print_error.c \
 		./printing/print_stack.c \
-		./sorting/swap.c \
-		./sorting/push.c \
+		./moving/swap.c \
+		./moving/push.c \
+		./moving/rotate.c \
+		./moving/reverse_rotate.c \
+		./sorting/radix.c \
 
 LIBFT = Libft/
 

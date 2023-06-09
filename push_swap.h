@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/07 17:17:52 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:17:38 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,10 @@ void	reverse_rotate(t_list **stack);
 void	rra(t_list **stack_a);
 void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
+
+//my functions to sort stacks
+void	sort_three(t_list **stack);
+int		check_sorting(t_list *stack);
 
 //use to printf what's inside my stacks
 void	print_stack(t_list *stack);

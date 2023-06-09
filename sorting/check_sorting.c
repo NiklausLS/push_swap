@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_sorting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 07:40:38 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/07 17:19:58 by nileempo         ###   ########.fr       */
+/*   Created: 2023/06/09 16:02:57 by nileempo          #+#    #+#             */
+/*   Updated: 2023/06/09 16:37:06 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int main(int argc, char **argv)
+int	check_sorting(t_list *stack)
 {
-	t_list **stack_a;
-	t_list **stack_b;
-
-	stack_a = (t_list **)malloc(sizeof(t_list));
-	*stack_a = NULL;
-	stack_b = malloc(sizeof(t_list));
-	*stack_b = NULL;
-
-	if (argc < 2)
-		return (0);
-	init_stack(argc, argv, stack_a);
-	print_stack(*stack_a);
-	free(stack_a);
-	return (0);
+	while (stack && stack->next)
+	{
+		if (stack->data > stack->next->data)
+		{
+			printf("sorting not OK");
+			return (0);
+		}
+		stack = stack->next;
+	}
+		printf("sorting OK\n");
+	return (1);	
 }
