@@ -6,77 +6,77 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 09:02:24 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/07 09:49:46 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/15 09:22:54 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+//#include <stdio.h>
 
-int	check_nbr(char **argv)
+static int	check_nbr(char *argv)
 {
 	int	i;
-	int	j;
+
+	i = 0;
+	if (argv[0] == '-')
+		i++;
+	while (argv[i])
+	{
+		if (!ft_isdigit(argv[i]))
+		{
+			error_stderr();
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
+static int	check_minmax(long nbr)
+{
+	if (nbr > 2147483647 || nbr < -2147483648)
+	{
+		error_stderr();
+		return (1);
+	}
+	return (0);
+}
+
+static int	check_doubles(char **argv, long nbr, int index)
+{
+	int	i;
+
+	i = index + 1;
+	while (argv[i])
+	{
+		if (ft_atoi(argv[i]) == nbr)
+		{
+			error_stderr();
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
+void	checking(char **argv)
+{
+	int		i;
+	long	nbr;
 
 	i = 1;
 	while (argv[i])
 	{
-		j = 0;
-		while (argv[i][j])
-		{	
-			if (!ft_isdigit(argv[i][j]))
-			{
-				write (2, "Error\n", 6);
-				return (0);
-			}
-			j++;
-		}
+		check_nbr(argv[i]);
+		nbr = ft_atoi(argv[i]);
+		check_minmax(nbr);
+		check_doubles(argv, nbr, i);
 		i++;
 	}
-	return (1);
 }
-
-long	check_minmax(long *nbr)
+/*
+int main(int argc, char **argv)
 {
-	if (*nbr > 2147483647 || *nbr < -2147483648)
-	{
-		write (2, "Error\n", 6);
-		return (0);
-	}
-	return (*nbr);
-}
-
-int	check_doubles(t_list *stack)
-{
-	t_list	*tmp;
-	t_list	*current;
-
-	tmp = NULL;
-	current = stack;
-	while (current != NULL)
-	{
-		tmp = current->next;
-		while (tmp != NULL)
-		{
-			if (current->data == tmp->data)
-			{
-				write (2, "Error\n", 6);
-				return (0);
-			}
-			tmp = tmp->next;
-		}
-		current = current->next;
-	}
-	return (1);
-}
-
-/*void	check_space(char **argv)
-{
-	int i;
-
-	i = 0;
-	if (argv[1][0] == ' ')
-	{
-		while (argv[1][i] == ' ')
-		i++;
-	}
+	(void) argc;
+	checking(argv);
 }*/

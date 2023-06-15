@@ -6,49 +6,37 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 11:59:44 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/09 17:29:33 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/15 06:39:14 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//132 213 231 312 321
+//sorts 132 213 231 312 321
 
 void	sort_three(t_list **stack)
 {
-	//head = 1 / 3 / 2
 	if (((*stack)->data < (*stack)->next->data)
-			&& ((*stack)->next->data > (*stack)->next->next->data)
-			&& ((*stack)->data < (*stack)->next->next->data))
+		&& ((*stack)->next->data > (*stack)->next->next->data)
+		&& ((*stack)->data < (*stack)->next->next->data))
 	{
-		printf("132\n");
 		rra(stack);
 		sa(stack);
 	}
-	//head = 2 / 1 / 3 && 3 / 1 / 2
 	else if (((*stack)->data > (*stack)->next->data)
 		&& ((*stack)->next->data < (*stack)->next->next->data))
-	{
-		printf("213 312\n");
 		ra(stack);
-	}
-	//head = 2 / 3 / 1
 	else if (((*stack)->data < (*stack)->next->data)
 		&& ((*stack)->data > ((*stack)->next->next->data)))
-	{
-		printf("231\n");
-		rra(stack);	
-	}
-	//head = 3 / 2 / 1
+		rra(stack);
 	else if (((*stack)->data > (*stack)->next->data)
 		&& ((*stack)->next->data > (*stack)->next->next->data))
 	{
-		printf("321\n");
 		ra(stack);
 		sa(stack);
 	}
 }
-
+/*
 int main()
 {
 	t_list	*stack_a = NULL;
@@ -86,4 +74,4 @@ int main()
 		stack_a = stack_a->next;
 	}
 	return (0);
-}
+}*/

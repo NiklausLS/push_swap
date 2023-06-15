@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/09 16:17:38 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/15 09:21:39 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,11 @@
 # include <stdlib.h>
 # include "Libft/libft.h"
 
-// my structure
-typedef struct s_list {
-	int	data;
-	int	index;
-	struct s_list *next;
-}	t_list;
-
-// my functions for chained list 
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstnew(int data);
-int		ft_lstsize(t_list *lst);
-
 int		main(int argc, char **argv);
 void	init_stack(int argc, char **argv, t_list **stack);
 
-//my functions to checks errors
-int		check_doubles(t_list *stack);
-int		check_nbr(char **argv);
-long	check_minmax(long *nbr);
+//check errors
+void	checking(char **argv);
 
 //print error on sdterr
 void	error_stderr();
