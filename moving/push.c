@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:18:40 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/07 14:21:16 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/16 16:19:59 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	push(t_list **dest, t_list **src)
 	*src = tmp;
 }
 
-void	pa(t_list **stack_b, t_list **stack_a)
+void	pa(t_list **stack_a, t_list **stack_b)
 {
 	push(stack_b, stack_a);
 	write(1, "pa\n", 3);

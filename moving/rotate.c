@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:18:51 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/07 16:40:23 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/16 16:13:49 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //Move up 1 position all elements of stack_a
 //First element becomes last
 
-void	rotate(t_list **stack)
+/*void	rotate(t_list **stack)
 {
 	t_list	*first;
 	t_list	*last;
@@ -27,20 +27,30 @@ void	rotate(t_list **stack)
 	last = ft_lstlast(*stack);
 	last->next = first;
 	first->next = NULL;
-}
+}*/
 
 //RA : print ra
 void	ra(t_list **stack_a)
 {
-	rotate(stack_a);
+	t_list	*last;
+
+	last = ft_lstlast(*stack_a);
+	last->next = *stack_a;
+	*stack_a = (*stack_a)->next;
+	last->next->next = NULL;
 	write(1, "ra\n", 3);
 }
 
 //RB : print rb
 void	rb(t_list **stack_b)
 {
-	rotate(stack_b);
-	write(1, "ra\n", 3);
+	t_list	*last;
+
+	last = ft_lstlast(*stack_b);
+	last->next = *stack_b;
+	*stack_b = (*stack_b)->next;
+	last->next->next = NULL;
+	write(1, "rb\n", 3);
 }
 
 //RR : do both
