@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:43:42 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/16 18:33:40 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/16 18:48:31 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,12 @@
 void	swap(t_list *stack)
 {
 	int	tmp_data;
-	int	tmp_index;
 
 	if (!stack || !stack->next)
 		return ;
 	tmp_data = stack->data;
-	tmp_index = stack->index;
 	stack->data = stack->next->data;
-	stack->index = stack->next->index;
 	stack->next->data = tmp_data;
-	stack->next->index = tmp_index;
 }
 
 void	sa(t_list **stack_a)

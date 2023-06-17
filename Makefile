@@ -25,7 +25,7 @@ LIBFT = Libft/
 
 CC = gcc
 
-H = ./headers/push_swap.h
+H = ./currenters/push_swap.h
 
 RM = rm -f
 

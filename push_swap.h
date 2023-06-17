@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
 # include "Libft/libft.h"
 
 int		main(int argc, char **argv);
@@ -55,9 +56,10 @@ int		check_sorting(t_list *stack);
 
 //radix_sort
 void	radix(t_list **stack_a, t_list **stack_b);
-int		get_max_data(t_list **stack);
-int		get_min_data(t_list **stack);
+//t_list  *find_min(t_list **stack);
+//t_list  *find_next_min(t_list **stack, t_list **last_min);
 
 //use to printf what's inside my stacks
-void	print_stack(t_list *stack);
+//void	print_stack(t_list *stack);
+//void    print_index(t_list *stack);
 #endif
