@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/16 17:52:02 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/20 11:08:45 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int		check_sorting(t_list *stack);
 
 //radix_sort
 void	radix(t_list **stack_a, t_list **stack_b);
+void	indexation(t_list **stack);
 //t_list  *find_min(t_list **stack);
 //t_list  *find_next_min(t_list **stack, t_list **last_min);
 
