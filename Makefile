@@ -6,7 +6,7 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 11:04:26 by nileempo          #+#    #+#              #
-#    Updated: 2023/06/15 09:23:13 by nileempo         ###   ########.fr        #
+#    Updated: 2023/06/20 17:26:18 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,10 @@ SRC = main.c \
 		./moving/reverse_rotate.c \
 		./sorting/radix.c \
 		./sorintg/radix_utils.c \
+		./sorting/sort_two.c \
+		./sorting/sort_three.c \
+		./sorting/sort_four.c \
+		./sorting/sort_five.c \
 
 LIBFT = Libft/
 

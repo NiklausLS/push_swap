@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_five.c                                        :+:      :+:    :+:   */
+/*   sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 11:59:53 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/20 17:02:49 by nileempo         ###   ########.fr       */
+/*   Created: 2023/06/20 17:24:43 by nileempo          #+#    #+#             */
+/*   Updated: 2023/06/20 17:44:58 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
-void    sort_five(t_list **stack_a, t_list **stack_b)
+t_list  *sort_four(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*current;
-	t_list	*b;
+    t_list  *current;
+    int     min;
 
-	current = *stack_a;
-	b = *stack_b;
-	while (current)
-	{
-    	if (current->index > current->next->index)
-		{
-			sa(&current);
-			ra(&current);
-		}
-		else 
-			ra(&current);
-		current = current->next;
-	}
+    current = *stack_a;
+    min = find_min_index(stack_a);
+    while(current)
+    {
+        if (min == current->index)
+            pb(stack_b, stack_a);
+        current = current->next;
+    }
 }
 
 int main()
@@ -42,25 +36,21 @@ int main()
 	t_list *a2 = malloc(sizeof(t_list));
 	t_list *a3 = malloc(sizeof(t_list));
     t_list *a4 = malloc(sizeof(t_list));
-    t_list *a5 = malloc(sizeof(t_list));
 
 	a1->index = -1;
 	a2->index = -1;
 	a3->index = -1;
     a4->index = -1;
-    a5->index = -1;
 
     a1->data = 4;
     a2->data = 2;
     a3->data = 1;
     a4->data = 3;
-    a5->data = 5;
 
 	a1->next = a2;
 	a2->next = a3;
     a3->next = a4;
-    a4->next = a5;
-    a5->next = NULL;
+    a4->next = NULL;
 
     stack_a = a1;
     t_list *test = stack_a;
@@ -79,7 +69,7 @@ int main()
 		a = a->next;
 	}
     printf("\n--- After ---\n");
-    sort_five(&stack_a, &stack_b);
+    sort_four(&stack_a, &stack_b);
     t_list *current = stack_a;
 	while (current)
 	{

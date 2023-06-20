@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/20 11:08:45 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/20 17:28:41 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
 
 //my functions to sort stacks
+void	sort_two(t_list **stack);
 void	sort_three(t_list **stack);
+
 int		check_sorting(t_list *stack);
 
 //radix_sort

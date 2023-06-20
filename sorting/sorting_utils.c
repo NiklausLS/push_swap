@@ -16,21 +16,16 @@ int find_min_index(t_list **stack)
 {
     t_list  *current;
     t_list  *min;
-    int     i;
 
-    i = 0;
     current = *stack;
     min = *stack;
     while (current)
     {
         if (current->index < min->index)
-        {
             min->index = current->index;
-            i++;
-        }
         current = current->next;
     }
-    return (i);
+    return (min->index);
 }
 
 int main()
@@ -48,6 +43,12 @@ int main()
 	a3->data = 5;
     a4->data = 4;
     a5->data = 1;
+
+    a1->index = -1;
+    a2->index = -1;
+    a3->index =-1;
+    a4->index = -1;
+    a5->index = -1;
 
 	a1->next = a2;
 	a2->next = a3;
