@@ -20,12 +20,13 @@ SRC = main.c \
 		./moving/rotate.c \
 		./moving/reverse_rotate.c \
 		./sorting/radix.c \
+		./sorintg/radix_utils.c \
 
 LIBFT = Libft/
 
 CC = gcc
 
-H = ./currenters/push_swap.h
+H = push_swap.h
 
 RM = rm -f
 

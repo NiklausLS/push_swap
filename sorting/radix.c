@@ -32,13 +32,12 @@ static void	sort_bits(t_list **stack_a, t_list **stack_b)
 	t_list	*current;
 	int		i;
 	
-
 	current = *stack_a;
 	i = 0;
 	while (i < ft_lstsize(*stack_a))
 	{
 		current = *stack_a;
-		if (((current->data >> bit_index) & 1) == 1)
+		if (((current->data >> i) & 1) == 1)
 			ra(stack_a);
 		else
 			pb(stack_a, stack_b);
@@ -70,7 +69,7 @@ void	radix(t_list **stack_a, t_list **stack_b)
 		bit_index++;
 	}
 }
-
+/*
 int main()
 {
 	t_list *stack_a = NULL;
@@ -112,4 +111,4 @@ int main()
 	free(a3);
 	free(a4);
 	return (0);
-}
+}*/

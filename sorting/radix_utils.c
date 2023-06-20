@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-//find the lowest data in my chained list
+//find the lowest data in my chained list ans return a ptr
 static t_list	*find_min_data(t_list **stack)
 {
 	t_list	*current;
@@ -35,24 +35,6 @@ static t_list	*find_min_data(t_list **stack)
 	}
 	return (min);
 }
-
-/*t_list	*find_max_data(t_list	**stack)
-{
-	t_list	*current;
-	t_list	*max;
-
-	current = *stack;
-	max = *stack;
-	if(!stack)
-		exit(0);
-	while (current)
-	{
-		if (current->data > max->data)
-			max->data = current->data;
-		current = current->next;
-	}
-	return (max);
-}*/
 
 //initialise an index on my nodes from min to max
 void	indexation(t_list **stack)

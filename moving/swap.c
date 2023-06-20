@@ -21,13 +21,13 @@
 
 void	swap(t_list *stack)
 {
-	int	tmp_data;
+	int	tmp;
 
 	if (!stack || !stack->next)
 		return ;
-	tmp_data = stack->data;
+	tmp = stack->data;
 	stack->data = stack->next->data;
-	stack->next->data = tmp_data;
+	stack->next->data = tmp;
 }
 
 void	sa(t_list **stack_a)

@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-/*void	print_index(t_list *stack)
+void	printing(t_list *stack)
 {
 	t_list	*tmp;
 
@@ -11,7 +11,7 @@
 		tmp = tmp->next;
 	}
 	printf("\n");
-}*/
+}
 
 /*void	print_index(t_list *stack)
 {

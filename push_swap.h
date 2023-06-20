@@ -57,10 +57,11 @@ int		check_sorting(t_list *stack);
 //radix_sort
 void	radix(t_list **stack_a, t_list **stack_b);
 void	indexation(t_list **stack);
+int     find_min_index(t_list **stack);
 //t_list  *find_min(t_list **stack);
 //t_list  *find_next_min(t_list **stack, t_list **last_min);
 
 //use to printf what's inside my stacks
-//void	print_stack(t_list *stack);
+void	printing(t_list *stack);
 //void    print_index(t_list *stack);
 #endif
