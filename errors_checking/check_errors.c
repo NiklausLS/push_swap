@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 09:02:24 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 16:49:11 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:54:36 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ static int	check_nbr(char *argv)
 	while (argv[i])
 	{
 		if (!ft_isdigit(argv[i]))
-		{
-			printf("erreur nbr");
-			//error_stderr();
-		}
+			error_stderr();
 		i++;
 	}
 	return (0);
@@ -35,8 +32,7 @@ static int	check_nbr(char *argv)
 static int	check_minmax(long nbr)
 {
 	if (nbr > 2147483647 || nbr < -2147483648)
-		printf("erreur minmax\n");
-		//error_stderr();
+		error_stderr();
 	return (0);
 }
 
@@ -48,10 +44,7 @@ static int	check_doubles(char **argv, long nbr, int index)
 	while (argv[i])
 	{
 		if (ft_atoi(argv[i]) == nbr)
-		{
-			printf("erreur doubles\n");
 			error_stderr();
-		}
 		i++;
 	}
 	return (0);
