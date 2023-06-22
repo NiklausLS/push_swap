@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:24:43 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 07:23:30 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 09:17:58 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,33 +17,42 @@
 //sort the last 3
 //then push min in top of a
 
-t_list	*sort_four(t_list **stack_a, t_list **stack_b)
+void	sort_four(t_list **stack_a, t_list **stack_b)
 {
     t_list  *current;
     int     pos;
-
-    current = *stack_a;
-    pos = find_index_position(stack_a);
-	if (pos == 0)
-		pb(stack_a, stack_b);
-	else if (pos == 1)
+	int		min;
+	
+	current = *stack_a;
+	min = find_min_index(stack_a);
+	t_list *a = *stack_a;
+	printf("min index = %d\n", min);
+	while (a)
 	{
+		printf("Data = %d | Index = %d\n", a->data, a ->index);
+		a = a->next;
+	}	
+    pos = find_index_position(stack_a, min);
+	if (pos == 1)
 		sa(stack_a);
-		pb(stack_a, stack_b);
-	}
 	else if (pos == 2)
 	{
 		ra(stack_a);
 		sa(stack_a);
-		pb(stack_a, stack_b);
 	}
 	else if (pos == 3)
 		rra(stack_a);
+	pb(stack_a, stack_b);
+	t_list *bbb = *stack_b;
+	printf("****** sort_four : Stack_b :\n");
+	while (bbb)
+	{
+		printf("Data = %d | Index = %d\n", bbb->data, bbb->index);
+		bbb = bbb->next;
+	}
     sort_three(stack_a);
 	pa(stack_b, stack_a);
-	return (current);
 }
-
 /*
 int main()
 {

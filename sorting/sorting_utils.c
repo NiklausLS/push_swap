@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 14:28:18 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 07:21:09 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 09:11:41 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //check the position of my nodes by using the index as parameter
 //and returns it
-int	find_index_position(t_list **stack)
+int	find_index_position(t_list **stack, int index)
 {
 	t_list	*current;
 	int		pos;
@@ -23,7 +23,7 @@ int	find_index_position(t_list **stack)
 	pos = 0;
 	while (current)
 	{
-		if (current->index == 0)
+		if (current->index == index)
 			break;
 		pos++;
 		current = current->next;
@@ -31,8 +31,8 @@ int	find_index_position(t_list **stack)
 	return (pos);
 }
 
-//check the tinyest index
-/*
+//check the tinyest index in the stack
+
 int find_min_index(t_list **stack)
 {
     t_list  *current;
@@ -47,7 +47,7 @@ int find_min_index(t_list **stack)
         current = current->next;
     }
     return (min->index);
-}*/
+}
 /*
 int main()
 {

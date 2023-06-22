@@ -25,9 +25,9 @@ void	swap(t_list *stack)
 
 	if (!stack || !stack->next)
 		return ;
-	tmp = stack->data;
-	stack->data = stack->next->data;
-	stack->next->data = tmp;
+	tmp = stack->index;
+	stack->index = stack->next->index;
+	stack->next->index = tmp;
 }
 
 void	sa(t_list **stack_a)

@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:18:40 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/16 16:19:59 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 09:43:57 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	write(1, "pa\n", 3);
 }
 
-void	pb(t_list **stack_a, t_list **stack_b)
+void	pb(t_list **stack_b, t_list **stack_a)
 {
-	push(stack_b, stack_a);
+	push(stack_a, stack_b);
 	write(1, "pb\n", 3);
 }
 /*
@@ -75,7 +75,7 @@ int main()
 	t_list *current_a = stack_a;
 	while (current_a)
 	{
-		printf("%d | ", current_a->data);
+		printf("DATA = %d | INDEX = %d\n", current_a->data, current_a->index);
 		current_a = current_a->next;
 	}
 	printf("\n");
@@ -83,7 +83,7 @@ int main()
 	t_list *current_b = stack_b;
 	while (current_b)
 	{
-		printf("%d | ", current_b->data);
+		printf("DATA = %d | INDEX = %d\n", current_b->data, current_b->index);
 		current_b = current_b->next;
 	}
 	printf("\n");
@@ -94,7 +94,7 @@ int main()
 	current_a = stack_a;
 	while (current_a != NULL)
 	{
-		printf("%d |", current_a->data);
+		printf("DATA = %d | INDEX = %d\n", current_a->data, current_a->index);
 		current_a = current_a->next;
 	}
 	printf("\n");
@@ -102,7 +102,7 @@ int main()
 	current_b = stack_b;
 	while (current_b != NULL)
 	{
-		printf("%d | ", current_b->data);
+		printf("DATA = %d | INDEX = %d\n", current_b->data, current_b->index);
 		current_b = current_b->next;
 	}
 	printf("\n");

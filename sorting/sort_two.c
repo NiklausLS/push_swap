@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:24:32 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 06:17:24 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 08:17:16 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ void	sort_two(t_list **stack)
 	t_list	*current;
 
 	current = *stack;
-	if (current->data > current->next->data)
+	if (current->index > current->next->index)
 		sa(stack);
 }
 
+/*
 int main()
 {
 	t_list	**stack_a;
@@ -46,4 +47,4 @@ int main()
 	printf("Elem1 : Data = %d | Index = %d\n", elem1->data, elem1->index);
 	printf("Elem2 : Data = %d | Index = %d\n", elem2->data, elem2->index);
 	return (0);
-}
+}*/
