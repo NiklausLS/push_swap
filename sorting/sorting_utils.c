@@ -6,12 +6,32 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 14:28:18 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/20 14:28:19 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 06:37:56 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+//check the position of my nodes by using the index as parameter
+//and returns it
+int	find_index_position(t_list **stack, int index)
+{
+	t_list	*current;
+	int		pos;
+	
+	current = *stack;
+	pos = 0;
+	while (current)
+	{
+		if (current->index == index)
+			break;
+		pos++;
+		current = current->next;
+	}
+	return (pos);
+}
+
+//check the tinyest index
 int find_min_index(t_list **stack)
 {
     t_list  *current;
@@ -46,7 +66,7 @@ int main()
 
     a1->index = -1;
     a2->index = -1;
-    a3->index =-1;
+    a3->index = 4;
     a4->index = -1;
     a5->index = -1;
 
@@ -58,8 +78,9 @@ int main()
     stack_a = a1;
 
     indexation(&stack_a);
-    int a = find_min_index(&stack_a);
-    printf("a = %d", a);
+    //int a = find_min_index(&stack_a);
+	int pos = find_index_position(&stack_a, 4);
+    printf("a = %d", pos);
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/20 17:28:41 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 06:36:15 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,17 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 //my functions to sort stacks
 void	sort_two(t_list **stack);
 void	sort_three(t_list **stack);
-
+t_list	*sort_four(t_list **stack_a, t_list *stack_b);	
 int		check_sorting(t_list *stack);
 
 //radix_sort
 void	radix(t_list **stack_a, t_list **stack_b);
+
+//utils for sorting
+//
 void	indexation(t_list **stack);
 int     find_min_index(t_list **stack);
+int		find_index_position(t_list **stack, int index);
 //t_list  *find_min(t_list **stack);
 //t_list  *find_next_min(t_list **stack, t_list **last_min);
 
