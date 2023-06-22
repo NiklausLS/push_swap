@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:18:40 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 10:26:05 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 13:24:37 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //PA : take the 1rst element on top of B and put it on A
 //Do nothing if b is empty
 
-void	push(t_list **dest, t_list **src)
+static void	push(t_list **dest, t_list **src)
 {
 	t_list	*tmp;
 

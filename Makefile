@@ -6,25 +6,27 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 11:04:26 by nileempo          #+#    #+#              #
-#    Updated: 2023/06/20 17:26:18 by nileempo         ###   ########.fr        #
+#    Updated: 2023/06/22 14:27:03 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.c \
+SRC = 	main.c \
 	  	init_stack.c \
 	  	./errors_checking/check_errors.c \
+		./errors_checking/check_sorting.c \
 		./printing/print_error.c \
-		./printing/print_stack.c \
 		./moving/swap.c \
 		./moving/push.c \
 		./moving/rotate.c \
 		./moving/reverse_rotate.c \
 		./sorting/radix.c \
-		./sorintg/radix_utils.c \
+		./sorting/radix_utils.c \
 		./sorting/sort_two.c \
 		./sorting/sort_three.c \
 		./sorting/sort_four.c \
 		./sorting/sort_five.c \
+		./sorting/sorting_utils.c \
+		./sorting/sort_all.c 
 
 LIBFT = Libft/
 
@@ -43,11 +45,11 @@ OBJ = $(SRC:.c=.o)
 .c.o:
 	$(CC) $(FLAGS) -I $(H) -c $< -o $(<:.c=.o)
 
+all: $(NAME)
+
 $(NAME): $(OBJ)
 		$(MAKE) -C $(LIBFT)
-		cp ./Libft/libft.a $(NAME)
-
-all: $(NAME)
+		$(CC) $(CFLAGS) $(OBJ) -I $(H) ./Libft/libft.a -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)

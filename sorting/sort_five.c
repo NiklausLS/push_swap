@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 11:59:53 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 12:18:52 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 14:24:40 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,12 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 	t_list	*current;
 	t_list	*b;
 	int		pos;
+	int		pos2;
 
 	current = *stack_a;
 	b = *stack_b;
 	pos = find_index_position(stack_a, 0);
+	pos2 = find_index_position(stack_a, 1);
 	if (pos == 1)
 		sa(stack_a);
 	else if (pos == 2)

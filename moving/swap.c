@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:43:42 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 11:39:25 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 13:26:39 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 //
 //SS : BOTH AT THE SAME TIME
 
-void	swap(t_list *stack)
+static void	swap(t_list *stack)
 {
 	int	tmp_data;
 	int	tmp_index;

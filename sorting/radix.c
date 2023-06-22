@@ -6,12 +6,12 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 08:06:35 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/20 12:08:45 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 13:37:43 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
+/*
 //get the number of bits i need for radix
 static int	get_bits(t_list **stack)
 {
@@ -59,7 +59,7 @@ void	radix(t_list **stack_a, t_list **stack_b)
 	int		bit_index;
 
 	current = *stack_a;
-	max_data = get_max_data(stack_a);
+//	max_data = get_max_data(stack_a);
 	max_bits = get_bits(stack_a);
 	bit_index = 0;
 	while (bit_index < max_bits)
@@ -68,7 +68,7 @@ void	radix(t_list **stack_a, t_list **stack_b)
 		empty_b(stack_a, stack_b);
 		bit_index++;
 	}
-}
+}*/
 /*
 int main()
 {

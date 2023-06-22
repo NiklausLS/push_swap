@@ -6,13 +6,13 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:19:20 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/07 16:50:43 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 13:25:11 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	reverse_rotate(t_list **stack)
+static void	reverse_rotate(t_list **stack)
 {
 	t_list	*current;
 	t_list	*stock;

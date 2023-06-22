@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:18:51 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 11:24:06 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 13:26:13 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,6 @@
 
 //Move up 1 position all elements of stack_a
 //First element becomes last
-
-/*void	rotate(t_list **stack)
-{
-	t_list	*first;
-	t_list	*last;
-
-	if (!(*stack))
-		return ;
-	first = *stack;
-	*stack = first->next;
-	last = ft_lstlast(*stack);
-	last->next = first;
-	first->next = NULL;
-}*/
 
 //RA : print ra
 void	ra(t_list **stack_a)

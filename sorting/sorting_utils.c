@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 14:28:18 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 11:59:33 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 14:25:01 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	find_index_position(t_list **stack, int index)
 }
 
 //check the tinyest index in the stack
-
 int find_min_index(t_list **stack)
 {
     t_list  *current;

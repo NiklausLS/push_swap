@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 09:10:14 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 13:30:52 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,20 @@ void	checking(char **argv);
 void	error_stderr();
 
 //swap two
-void	swap(t_list *stack);
 void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
 void	ss(t_list **stack_a, t_list **stack_b);
 
 //push two
-void	push(t_list **dest, t_list **src);
 void	pa(t_list **stack_b, t_list **stack_a);
 void	pb(t_list **stack_a, t_list **stack_b);
 
 //rotate
-void	rotate(t_list **stack);
 void	ra(t_list **stack_a);
 void	rb(t_list **stack_b);
 void	rr(t_list **stack_a, t_list **stack_b);
 
 //reverse rotate
-void	reverse_rotate(t_list **stack);
 void	rra(t_list **stack_a);
 void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
@@ -55,6 +51,7 @@ void	sort_two(t_list **stack);
 void	sort_three(t_list **stack);
 void	sort_four(t_list **stack_a, t_list **stack_b);	
 void	sort_five(t_list **stack_a, t_list **stack_b);
+void	sort_all(t_list **stack_a, t_list **stack_b);
 int		check_sorting(t_list *stack);
 
 //radix_sort
