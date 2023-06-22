@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 16:34:45 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:49:00 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int		main(int argc, char **argv);
 void	init_stack(int argc, char **argv, t_list **stack);
 
 //check errors
-void	checking_argc(int argc);
 void	checking_argv(char **argv);
 int		check_sorting(t_list *stack);
 
@@ -59,7 +58,6 @@ void	sort_all(t_list **stack_a, t_list **stack_b);
 void	radix(t_list **stack_a, t_list **stack_b);
 
 //utils for sorting
-
 void	indexation(t_list **stack);
 int     find_min_index(t_list **stack);
 int		find_index_position(t_list **stack, int index);

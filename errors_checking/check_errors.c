@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 09:02:24 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 16:40:04 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:49:11 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,6 @@ static int	check_doubles(char **argv, long nbr, int index)
 		i++;
 	}
 	return (0);
-}
-
-void	checking_argc(int argc)
-{
-	if (argc < 2)
-		return (0);
 }
 
 void	checking_argv(char **argv)
