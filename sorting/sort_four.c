@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:24:43 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 06:54:23 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 07:23:30 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,31 @@
 t_list	*sort_four(t_list **stack_a, t_list **stack_b)
 {
     t_list  *current;
-    int     min;
+    int     pos;
 
     current = *stack_a;
-    min = find_min_index(stack_a);
-	if (current->index == min)
+    pos = find_index_position(stack_a);
+	if (pos == 0)
 		pb(stack_a, stack_b);
+	else if (pos == 1)
+	{
+		sa(stack_a);
+		pb(stack_a, stack_b);
+	}
+	else if (pos == 2)
+	{
+		ra(stack_a);
+		sa(stack_a);
+		pb(stack_a, stack_b);
+	}
+	else if (pos == 3)
+		rra(stack_a);
     sort_three(stack_a);
-	pa(stack_a, stack_b);
+	pa(stack_b, stack_a);
 	return (current);
 }
 
+/*
 int main()
 {
 	t_list	*stack_a = NULL;
@@ -89,4 +103,4 @@ int main()
 		s_b = s_b->next;
 	}
 	return(0);
-} 
+}*/

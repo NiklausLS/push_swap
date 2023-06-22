@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 06:46:23 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 07:18:18 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void	radix(t_list **stack_a, t_list **stack_b);
 //utils for sorting
 //
 void	indexation(t_list **stack);
-int     find_min_index(t_list **stack);
-int		find_index_position(t_list **stack, int index);
+//int     find_min_index(t_list **stack);
+int		find_index_position(t_list **stack);
 //t_list  *find_min(t_list **stack);
 //t_list  *find_next_min(t_list **stack, t_list **last_min);
 
