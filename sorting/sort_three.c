@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 11:59:44 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 06:57:33 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 11:42:02 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,17 @@ int main()
 
 	t_list *a1 = malloc(sizeof(t_list));
 	a1->index = 2;
+	a1->data = 2;
 	a1->next = NULL;
 
 	t_list *a2 = malloc(sizeof(t_list));
-	a2->index = 3;
+	a2->index = 1;
+	a2->data = 1;
 	a2->next = NULL;
 
 	t_list *a3 = malloc(sizeof(t_list));
-	a3->index = 1;
+	a3->index = 0;
+	a3->data = 0;
 	a3->next = NULL;
 
 	a1->next = a2;
@@ -61,16 +64,16 @@ int main()
 	stack_a = a1;
 	while (stack_a)
 	{
-		printf(" %d\n", stack_a->index);
+		printf("DATA = %d | INDEX = %d\n", stack_a->data, stack_a->index);
 		stack_a = stack_a->next;
 	}
 	stack_a = a1;
-	while (!check_sorting(stack_a))
-		sort_three(&stack_a);
+//	while (!check_sorting(stack_a))
+	sort_three(&stack_a);
 	printf("AFTER SORTING\n");
 	while (stack_a)
 	{
-		printf(" %d\n", stack_a->index);
+		printf("DATA = %d | INDEX = %d\n", stack_a->data, stack_a->index);
 		stack_a = stack_a->next;
 	}
 	return (0);

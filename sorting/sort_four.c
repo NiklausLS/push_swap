@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:24:43 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 09:17:58 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 11:42:47 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,20 @@ void	sort_four(t_list **stack_a, t_list **stack_b)
 {
     t_list  *current;
     int     pos;
-	int		min;
+//	int		min;
 	
 	current = *stack_a;
-	min = find_min_index(stack_a);
+//	min = find_min_index(stack_a);
 	t_list *a = *stack_a;
-	printf("min index = %d\n", min);
+//	printf("min index = %d\n", min);
 	while (a)
 	{
 		printf("Data = %d | Index = %d\n", a->data, a ->index);
 		a = a->next;
-	}	
-    pos = find_index_position(stack_a, min);
+	}
+  	pos = find_index_position(stack_a, 0);
+	printf("pos = %d\n", pos);
+	printf("----SORT_FOUR POS = %d\n", pos);
 	if (pos == 1)
 		sa(stack_a);
 	else if (pos == 2)
@@ -69,10 +71,10 @@ int main()
 	a3->index = -1;
     a4->index = -1;
 
-    a1->data = 4;
-    a2->data = 2;
-    a3->data = 1;
-    a4->data = 3;
+    a1->data = 3;
+    a2->data = 1;
+    a3->data = 0;
+    a4->data = 2;
 
 	a1->next = a2;
 	a2->next = a3;
@@ -87,7 +89,7 @@ int main()
 		printf("Data = %d | Index = %d\n", test->data, test->index);
 		test = test->next;
 	}
-	printf("INDEXATION\n");
+	printf("--- INDEXATION ---\n");
 	indexation(&stack_a);
     t_list *a = stack_a;
     while (a)
@@ -95,7 +97,7 @@ int main()
 		printf("Data = %d | Index = %d\n", a->data, a->index);
 		a = a->next;
 	}
-    printf("\n--- After ---\n");
+    printf("\n\n--- Calling sort_four ---\n");
     sort_four(&stack_a, &stack_b);
     t_list *s_a = stack_a;
 	t_list *s_b = stack_b;

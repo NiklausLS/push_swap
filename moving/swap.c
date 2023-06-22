@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:43:42 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/16 18:48:31 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 11:39:25 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,17 @@
 
 void	swap(t_list *stack)
 {
-	int	tmp;
+	int	tmp_data;
+	int	tmp_index;
 
 	if (!stack || !stack->next)
 		return ;
-	tmp = stack->index;
+	tmp_data = stack->data;
+	tmp_index = stack->index;
+	stack->data = stack->next->data;
 	stack->index = stack->next->index;
-	stack->next->index = tmp;
+	stack->next->data = tmp_data;
+	stack->next->index = tmp_index;
 }
 
 void	sa(t_list **stack_a)
@@ -67,13 +71,11 @@ int main()
 	elem2->next = NULL;
 	
 	stack_a = &elem1;
-	printf("BEFORE SA : ");
-	print_stack(*stack_a);
+	printf("BEFORE SA : \n");
 	printf("Elem1 : Data = %d | Index = %d\n", elem1->data, elem1->index);
 	printf("Elem2 : Data = %d | Index = %d\n", elem2->data, elem2->index);
 	sa(&elem1);
-	printf("AFTER SA : ");
-	print_stack(*stack_a);
+	printf("AFTER SA : \n");
 	printf("Elem1 : Data = %d | Index = %d\n", elem1->data, elem1->index);
 	printf("Elem2 : Data = %d | Index = %d\n", elem2->data, elem2->index);
 	

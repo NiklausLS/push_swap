@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:18:40 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 09:43:57 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 10:26:05 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	pb(t_list **stack_b, t_list **stack_a)
 	push(stack_a, stack_b);
 	write(1, "pb\n", 3);
 }
+
 /*
 int main()
 {
@@ -45,33 +46,35 @@ int main()
 	t_list	*stack_b = NULL;
 
 	t_list *a1 = malloc(sizeof(t_list));
-	a1->data = 1;
-	a1->index = 1;
+	a1->data = 3;
+	a1->index = -1;
 	a1->next = NULL;
 
 	t_list *a2 = malloc(sizeof(t_list));
 	a2->data = 2;
-	a2->index = 2;
+	a2->index = -1;
 	a2->next = NULL;
 
-	t_list *b1 = malloc(sizeof(t_list));
-	b1->data = 11;
-	b1->index = 1;
-	b1->next = NULL;
+	t_list *a3 = malloc(sizeof(t_list));
+	a3->data = 1;
+	a3->index = -1;
+	a3->next = NULL;
 
-	t_list *b2 = malloc(sizeof(t_list));
-	b2->data = 22;
-	b2->index = 2;
-	b2->next = NULL;
+	t_list *a4 = malloc(sizeof(t_list));
+	a4->data = 0;
+	a4->index = -1;
+	a4->next = NULL;
 
-	a2->next = a1;
-	stack_a = a2;
+	a1->next = a2;
+	a2->next = a3;
+	a3->next = a4;
+	a4->next = NULL;
 
-	b2->next = b1;
-	stack_b = b2;
-	
+	stack_a = a1;
+	indexation(&stack_a);
+
 	printf("Before PA\n");
-	printf("Stack_a = ");
+	printf("----Stack_a----\n");
 	t_list *current_a = stack_a;
 	while (current_a)
 	{
@@ -79,7 +82,7 @@ int main()
 		current_a = current_a->next;
 	}
 	printf("\n");
-	printf("Stack_b = ");
+	printf("****Stack_b****\n");
 	t_list *current_b = stack_b;
 	while (current_b)
 	{
@@ -88,9 +91,10 @@ int main()
 	}
 	printf("\n");
 	pa(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
 
-	printf("AFTER PA\n");
-	printf("Stack A: ");
+	printf("After pa\n");
+	printf("----Stack A----\n");
 	current_a = stack_a;
 	while (current_a != NULL)
 	{
@@ -98,7 +102,7 @@ int main()
 		current_a = current_a->next;
 	}
 	printf("\n");
-	printf("Stack B: ");
+	printf("****Stack_b****\n");
 	current_b = stack_b;
 	while (current_b != NULL)
 	{
