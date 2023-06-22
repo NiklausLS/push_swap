@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 14:28:18 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 11:41:51 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 11:59:33 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,23 @@ int find_min_index(t_list **stack)
     }
     return (min->index);
 }
+
+/*
+int	find_max_index(t_list **stack)
+{
+	t_list	*current;
+	r_list	*max;
+
+	current = *stack;
+	max = *stack;
+	while (current)
+		if (current->index > max->index)
+			max->index = current->index;
+	current = current->next;
+	}
+	return (max->index);
+}*/
+
 /*
 int main()
 {

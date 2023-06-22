@@ -19,13 +19,14 @@ int main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-	checking(argv);
+//	checking(argv);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	stack_b = malloc(sizeof(t_list));
 	*stack_b = NULL;
 
 	init_stack(argc, argv, stack_a);
+	sort_all(stack_a, stack_b);
 	printing(*stack_a);
 //	sort_three(stack_a);
 

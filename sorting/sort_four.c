@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:24:43 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 11:42:47 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 12:55:20 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,11 @@
 
 void	sort_four(t_list **stack_a, t_list **stack_b)
 {
-    t_list  *current;
-    int     pos;
-//	int		min;
-	
+    t_list	*current;
+	int		pos;
+
 	current = *stack_a;
-//	min = find_min_index(stack_a);
-	t_list *a = *stack_a;
-//	printf("min index = %d\n", min);
-	while (a)
-	{
-		printf("Data = %d | Index = %d\n", a->data, a ->index);
-		a = a->next;
-	}
-  	pos = find_index_position(stack_a, 0);
-	printf("pos = %d\n", pos);
-	printf("----SORT_FOUR POS = %d\n", pos);
+	pos = find_index_position(stack_a, 0);
 	if (pos == 1)
 		sa(stack_a);
 	else if (pos == 2)
@@ -45,14 +34,7 @@ void	sort_four(t_list **stack_a, t_list **stack_b)
 	else if (pos == 3)
 		rra(stack_a);
 	pb(stack_a, stack_b);
-	t_list *bbb = *stack_b;
-	printf("****** sort_four : Stack_b :\n");
-	while (bbb)
-	{
-		printf("Data = %d | Index = %d\n", bbb->data, bbb->index);
-		bbb = bbb->next;
-	}
-    sort_three(stack_a);
+	sort_three(stack_a);
 	pa(stack_b, stack_a);
 }
 /*

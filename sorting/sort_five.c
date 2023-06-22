@@ -6,26 +6,19 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 11:59:53 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 10:34:48 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 12:18:52 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void    sort_five(t_list **stack_a, t_list **stack_b)
+static void	push_bigger_after_min(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*current;
-	t_list	*b;
 	int		pos;
-	int		pos1;
-//	int		min;
 
 	current = *stack_a;
-	b = *stack_b;
-	pos = find_index_position(stack_a, 0);
-	pos1 = find_index_position(stack_a, 1);
-	printf("---- POS = %d\n", pos);
-//	printf("---- POS = %d\n", pos1);
+	pos = find_index_position(stack_a, 4);
 	if (pos == 1)
 		sa(stack_a);
 	else if (pos == 2)
@@ -41,22 +34,45 @@ void    sort_five(t_list **stack_a, t_list **stack_b)
 	else if (pos == 4)
 		rra(stack_a);
 	pb(stack_a, stack_b);
-	t_list *aa = *stack_a;
-	t_list *bb = *stack_b;
-	while (aa)
-	{
-		printf("Data = %d | Index = %d\n", aa->data, aa->index);
-		aa = aa->next;
-	}
-	while (bb)
-	{
-		printf("Data = %d | Index = %d\n", bb->data, bb->index);
-		bb = bb->next;
-	}	
-//	sort_four(stack_a, stack_b);
-	pa(stack_b, stack_a);
 }
 
+static void	sort_mandatory(t_list **stack_a, t_list **stack_b)
+{
+	pb(stack_a, stack_b);
+	push_bigger_after_min(stack_a, stack_b);
+	sort_three(stack_a);
+	sort_two(stack_b);
+	pa(stack_b, stack_a);
+	pa(stack_b, stack_a);
+	ra(stack_a);
+}
+
+void	sort_five(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*current;
+	t_list	*b;
+	int		pos;
+
+	current = *stack_a;
+	b = *stack_b;
+	pos = find_index_position(stack_a, 0);
+	if (pos == 1)
+		sa(stack_a);
+	else if (pos == 2)
+	{
+		ra(stack_a);
+		sa(stack_a);
+	}
+	else if (pos == 3)
+	{
+		rra(stack_a);
+		rra(stack_a);
+	}
+	else if (pos == 4)
+		rra(stack_a);
+	sort_mandatory(stack_a, stack_b);
+}
+/*
 int main()
 {
 	t_list	*stack_a = NULL;
@@ -102,9 +118,9 @@ int main()
 		printf("Data = %d | Index = %d\n", a->data, a->index);
 		a = a->next;
 	}
-	printf("before sort_five\n");
+	printf("BEFORE sort_five\n");
     sort_five(&stack_a, &stack_b);
-	printf("AFTER\n");
+	printf("AFTER sort_five\n");
     t_list *current = stack_a;
 	t_list *s_b = stack_b;
 	printf("Stack_a :\n");
@@ -120,4 +136,4 @@ int main()
 		s_b = s_b->next;
 	}
 	return(0);
-} 
+}*/
