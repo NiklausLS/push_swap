@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:24:43 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 06:28:22 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 06:54:23 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,18 @@
 //sort the last 3
 //then push min in top of a
 
-t_list  *sort_four(t_list **stack_a, t_list **stack_b)
+t_list	*sort_four(t_list **stack_a, t_list **stack_b)
 {
     t_list  *current;
     int     min;
 
     current = *stack_a;
     min = find_min_index(stack_a);
-	if (min->index == 0)
-
-    while (current)
-    {
-        if (min == current->index)
-            pb(stack_b, stack_a);
-        current = current->next;
-    }
+	if (current->index == min)
+		pb(stack_a, stack_b);
+    sort_three(stack_a);
+	pa(stack_a, stack_b);
+	return (current);
 }
 
 int main()
@@ -64,7 +61,7 @@ int main()
     printf("--- Before ---\n");
 	while (test)
 	{
-		printf("Index = %d\n", test->index);
+		printf("Data = %d | Index = %d\n", test->data, test->index);
 		test = test->next;
 	}
 	printf("INDEXATION\n");
@@ -72,16 +69,24 @@ int main()
     t_list *a = stack_a;
     while (a)
 	{
-		printf("Index = %d\n", a->index);
+		printf("Data = %d | Index = %d\n", a->data, a->index);
 		a = a->next;
 	}
     printf("\n--- After ---\n");
     sort_four(&stack_a, &stack_b);
-    t_list *current = stack_a;
-	while (current)
+    t_list *s_a = stack_a;
+	t_list *s_b = stack_b;
+	printf("--- Stack_a ---\n");
+	while (s_a)
 	{
-		printf("Index = %d\n", current->index);
-		current = current->next;
+		printf("Data = %d | Index = %d\n", s_a->data, s_a->index);
+		s_a = s_a->next;
+	}
+	printf("--- Stack_b ---\n");
+	while (s_b)
+	{
+		printf("Data = %d | Index = %d\n", s_b->data, s_b->index);
+		s_b = s_b->next;
 	}
 	return(0);
 } 

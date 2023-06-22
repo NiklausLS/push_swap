@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 11:59:44 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/20 12:13:02 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 06:57:33 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@
 
 void	sort_three(t_list **stack)
 {
-	if (((*stack)->data < (*stack)->next->data)
-		&& ((*stack)->next->data > (*stack)->next->next->data)
-		&& ((*stack)->data < (*stack)->next->next->data))
+	if (((*stack)->index < (*stack)->next->index)
+		&& ((*stack)->next->index > (*stack)->next->next->index)
+		&& ((*stack)->index < (*stack)->next->next->index))
 	{
 		rra(stack);
 		sa(stack);
 	}
-	else if (((*stack)->data > (*stack)->next->data)
-		&& ((*stack)->next->data < (*stack)->next->next->data))
+	else if (((*stack)->index > (*stack)->next->index)
+		&& ((*stack)->next->index < (*stack)->next->next->index))
 		ra(stack);
-	else if (((*stack)->data < (*stack)->next->data)
-		&& ((*stack)->data > ((*stack)->next->next->data)))
+	else if (((*stack)->index < (*stack)->next->index)
+		&& ((*stack)->index > ((*stack)->next->next->index)))
 		rra(stack);
-	else if (((*stack)->data > (*stack)->next->data)
-		&& ((*stack)->next->data > (*stack)->next->next->data))
+	else if (((*stack)->index > (*stack)->next->index)
+		&& ((*stack)->next->index > (*stack)->next->next->index))
 	{
 		ra(stack);
 		sa(stack);
@@ -43,15 +43,15 @@ int main()
 //	t_list	*stack_b = NULL;
 
 	t_list *a1 = malloc(sizeof(t_list));
-	a1->data = 2;
+	a1->index = 2;
 	a1->next = NULL;
 
 	t_list *a2 = malloc(sizeof(t_list));
-	a2->data = 3;
+	a2->index = 3;
 	a2->next = NULL;
 
 	t_list *a3 = malloc(sizeof(t_list));
-	a3->data = 1;
+	a3->index = 1;
 	a3->next = NULL;
 
 	a1->next = a2;
@@ -61,7 +61,7 @@ int main()
 	stack_a = a1;
 	while (stack_a)
 	{
-		printf(" %d\n", stack_a->data);
+		printf(" %d\n", stack_a->index);
 		stack_a = stack_a->next;
 	}
 	stack_a = a1;
@@ -70,7 +70,7 @@ int main()
 	printf("AFTER SORTING\n");
 	while (stack_a)
 	{
-		printf(" %d\n", stack_a->data);
+		printf(" %d\n", stack_a->index);
 		stack_a = stack_a->next;
 	}
 	return (0);

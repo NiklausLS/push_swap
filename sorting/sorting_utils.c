@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 14:28:18 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 06:37:56 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 06:48:26 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int find_min_index(t_list **stack)
     }
     return (min->index);
 }
-
+/*
 int main()
 {
 	t_list	*stack_a = NULL;
@@ -83,4 +83,4 @@ int main()
     printf("a = %d", pos);
 
 	return (0);
-}
+}*/
