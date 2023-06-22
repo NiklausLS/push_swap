@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 13:30:52 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 14:46:01 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	init_stack(int argc, char **argv, t_list **stack);
 
 //check errors
 void	checking(char **argv);
+int		check_sorting(t_list *stack);
 
 //print error on sdterr
 void	error_stderr();
@@ -52,7 +53,6 @@ void	sort_three(t_list **stack);
 void	sort_four(t_list **stack_a, t_list **stack_b);	
 void	sort_five(t_list **stack_a, t_list **stack_b);
 void	sort_all(t_list **stack_a, t_list **stack_b);
-int		check_sorting(t_list *stack);
 
 //radix_sort
 void	radix(t_list **stack_a, t_list **stack_b);

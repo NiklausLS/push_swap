@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 07:40:38 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 13:49:26 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:01:59 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,14 @@ int main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-//	checking(argv);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	stack_b = malloc(sizeof(t_list));
 	*stack_b = NULL;
+	checking(argv);
 
 	init_stack(argc, argv, stack_a);
 	sort_all(stack_a, stack_b);
-//	printing(*stack_a);
-
-//	sort_three(stack_a);
 
 	free(stack_a);
 	free(stack_b);
