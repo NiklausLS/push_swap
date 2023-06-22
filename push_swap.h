@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 14:46:01 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:34:45 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int		main(int argc, char **argv);
 void	init_stack(int argc, char **argv, t_list **stack);
 
 //check errors
-void	checking(char **argv);
+void	checking_argc(int argc);
+void	checking_argv(char **argv);
 int		check_sorting(t_list *stack);
 
 //print error on sdterr
