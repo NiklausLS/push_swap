@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 12:27:19 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 13:58:27 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 16:46:36 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ void	free_split(char **split)
 		i++;
 	while (i >= 0)
 	{
-		free(split[i--]);
+		free(split[i]);
 		i--;
 	}
+	free(split);
 }
 
 void	free_node(t_list **stack)
@@ -38,4 +39,5 @@ void	free_node(t_list **stack)
 		free(current);
 		current = next_node;
 	}
+	free(stack);
 }

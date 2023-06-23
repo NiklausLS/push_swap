@@ -6,12 +6,11 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 09:02:24 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 08:34:33 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 16:32:37 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-//#include <stdio.h>
 
 int	check_nbr(char *argv)
 {

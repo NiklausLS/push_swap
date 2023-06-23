@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 09:21:08 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 13:04:59 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 16:50:21 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,8 @@ void	initialisation(int argc, char **argv, t_list **stack)
 		ft_lstadd_back(stack, new);
 		i++;
 	}
-	indexation(stack);
-	free(stack);
 	if (argc == 2)
-		free_split(str[i]);
-//	free(stack);
+		free_split(str);
 }
 
 /*
