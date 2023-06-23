@@ -15,6 +15,7 @@ SRC = 	main.c \
 	  	./errors_checking/check_errors.c \
 		./errors_checking/check_sorting.c \
 		./errors_checking/check_others.c \
+		./errors_checking/check_all.c \
 		./printing/print_error.c \
 		./moving/swap.c \
 		./moving/push.c \

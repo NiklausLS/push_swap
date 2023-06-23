@@ -6,14 +6,14 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 07:32:52 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 07:33:16 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 08:34:25 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 //check if there is only one arguments and split it in many
-char	**check_one(char *argv)
+char	**check_one_arg(char *argv)
 {
 	char	**split;
 

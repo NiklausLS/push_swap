@@ -6,14 +6,14 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 09:02:24 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 16:54:36 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 08:34:33 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 //#include <stdio.h>
 
-static int	check_nbr(char *argv)
+int	check_nbr(char *argv)
 {
 	int	i;
 
@@ -29,14 +29,14 @@ static int	check_nbr(char *argv)
 	return (0);
 }
 
-static int	check_minmax(long nbr)
+int	check_minmax(long nbr)
 {
 	if (nbr > 2147483647 || nbr < -2147483648)
 		error_stderr();
 	return (0);
 }
 
-static int	check_doubles(char **argv, long nbr, int index)
+int	check_doubles(char **argv, long nbr, int index)
 {
 	int	i;
 
@@ -49,28 +49,3 @@ static int	check_doubles(char **argv, long nbr, int index)
 	}
 	return (0);
 }
-
-void	checking_argv(char **argv)
-{
-	long	nbr;
-	int		i;
-	char	**str;
-
-	nbr = 0;
-	i = 1;
-	str = argv;
-	while (argv[i])
-	{
-		check_nbr(argv[i]);
-		nbr = ft_atoi(argv[i]);
-		check_minmax(nbr);
-		check_doubles(argv, nbr, i);
-		i++;
-	}
-}
-/*
-int main(int argc, char **argv)
-{
-	checking_argc(argc);
-	checking_argv(argv);
-}*/

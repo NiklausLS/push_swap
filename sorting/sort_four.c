@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:24:43 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 13:29:29 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 08:23:37 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 void	sort_four(t_list **stack_a, t_list **stack_b)
 {
-    t_list	*current;
+	t_list	*current;
 	int		pos;
 
 	current = *stack_a;

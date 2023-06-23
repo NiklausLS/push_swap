@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 16:49:00 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 08:42:06 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@
 # include "Libft/libft.h"
 
 int		main(int argc, char **argv);
-void	init_stack(int argc, char **argv, t_list **stack);
+void	initialisation(int argc, char **argv, t_list **stack);
 
 //check errors
-void	checking_argv(char **argv);
-char    **sort_one(char *argv);
+int     check_nbr(char *argv);
+int     check_minmax(long nbr);
+int     check_doubles(char **argv, long nbr, int index);
+char    **check_one_arg(char *argv);
+void    checking_all(int argc, char **argv);
 int		check_sorting(t_list *stack);
 
 //print error on sdterr
@@ -53,10 +56,8 @@ void	sort_two(t_list **stack);
 void	sort_three(t_list **stack);
 void	sort_four(t_list **stack_a, t_list **stack_b);	
 void	sort_five(t_list **stack_a, t_list **stack_b);
+//void	radix(t_list **stack_a, t_list **stack_b);
 void	sort_all(t_list **stack_a, t_list **stack_b);
-
-//radix_sort
-void	radix(t_list **stack_a, t_list **stack_b);
 
 //utils for sorting
 void	indexation(t_list **stack);

@@ -6,22 +6,26 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 09:21:08 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/20 12:19:17 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 08:41:42 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_stack(int argc, char **argv, t_list **stack)
+void	initialisation(int argc, char **argv, t_list **stack)
 {
 	t_list	*new;
 	long	i;
-	(void)argc;
+	char	**str;
 
 	i = 1;
-	while (argv[i])
+	if (argc == 2)
+		str = ft_split(argv[i], ' ');
+	else
+		str = argv;
+	while (str[i])
 	{
-		new = ft_lstnew(ft_atoi(argv[i]));
+		new = ft_lstnew(ft_atoi(str[i]));
 		ft_lstadd_back(stack, new);
 		i++;
 	}
