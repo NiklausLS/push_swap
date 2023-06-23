@@ -23,6 +23,7 @@ void	init_stack(int argc, char **argv, t_list **stack);
 
 //check errors
 void	checking_argv(char **argv);
+char    **sort_one(char *argv);
 int		check_sorting(t_list *stack);
 
 //print error on sdterr
@@ -66,5 +67,6 @@ int		find_index_position(t_list **stack, int index);
 
 //use to printf what's inside my stacks
 void	printing(t_list *stack);
-//void    print_index(t_list *stack);
+void    print_index(t_list *stack);
+void    print_data(t_list *stack);
 #endif

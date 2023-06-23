@@ -27,6 +27,7 @@ int main(int argc, char **argv)
 	checking_argv(argv);
 
 	init_stack(argc, argv, stack_a);
+
 	sort_all(stack_a, stack_b);
 
 	free(stack_a);

@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_sorting.c                                    :+:      :+:    :+:   */
+/*   check_others.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 16:02:57 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 07:05:22 by nileempo         ###   ########.fr       */
+/*   Created: 2023/06/23 07:32:52 by nileempo          #+#    #+#             */
+/*   Updated: 2023/06/23 07:33:16 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//check if my stack_a is already sorted to avoid the program to infinite loop
-int	check_sorting(t_list *stack)
+//check if there is only one arguments and split it in many
+char	**check_one(char *argv)
 {
-	while (stack && stack->next)
-	{
-		if (stack->data > stack->next->data)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);	
+	char	**split;
+
+	split = ft_split(argv, ' ');
+	return (split);
 }
+
+/*int main(int argc, char **argv)
+{
+	int i = 1;
+	int j = 0;
+	char **test = sort_one(argv[i]);
+
+	if (argc != 2)
+	{
+		printf("args error\n");
+		exit(1);
+	}
+	else	
+		while (test[j])
+		{
+			printf("j = %d | %s\n", j, test[j]);
+			j++;
+		}
+	free(test);
+	return (0);
+}*/
