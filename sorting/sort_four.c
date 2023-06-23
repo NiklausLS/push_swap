@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:24:43 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 08:23:37 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 12:50:13 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sort_four(t_list **stack_a, t_list **stack_b)
 	int		pos;
 
 	current = *stack_a;
-	pos = find_index_position(stack_a, 0);
+	pos = find_index_position(stack_a, 1);
 	if (pos == 1)
 		sa(stack_a);
 	else if (pos == 2)

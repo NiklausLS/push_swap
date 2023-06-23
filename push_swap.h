@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 08:42:06 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 12:45:59 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,15 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
+
 # include "Libft/libft.h"
 
 int		main(int argc, char **argv);
 void	initialisation(int argc, char **argv, t_list **stack);
+
+//free
+void	free_split(char **split);
+void	free_node(t_list **stack);
 
 //check errors
 int     check_nbr(char *argv);

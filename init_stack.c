@@ -6,23 +6,29 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 09:21:08 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 08:41:42 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 13:04:59 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <sys/types.h>
 
 void	initialisation(int argc, char **argv, t_list **stack)
 {
 	t_list	*new;
-	long	i;
+	int		i;
 	char	**str;
 
-	i = 1;
 	if (argc == 2)
-		str = ft_split(argv[i], ' ');
+	{
+		str = ft_split(argv[1], ' ');
+		i = 0;
+	}
 	else
+	{
 		str = argv;
+		i = 1;
+	}
 	while (str[i])
 	{
 		new = ft_lstnew(ft_atoi(str[i]));
@@ -30,7 +36,12 @@ void	initialisation(int argc, char **argv, t_list **stack)
 		i++;
 	}
 	indexation(stack);
+	free(stack);
+	if (argc == 2)
+		free_split(str[i]);
+//	free(stack);
 }
+
 /*
 int main(int argc, char **argv)
 {
@@ -38,12 +49,12 @@ int main(int argc, char **argv)
 
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
-	checking(argv);
-	init_stack(argc, argv, stack_a);
-	sort_three(stack_a);
+	checking_all(argv);
+	initialisation(argc, argv, stack_a);
+//	sort_three(stack_a);
 
 	printing(*stack_a);
-	free(stack_a);
+//	free(stack_a);
 
 	return (0);
 }*/

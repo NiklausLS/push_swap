@@ -6,19 +6,19 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 11:59:53 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 14:24:40 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 11:30:51 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	push_bigger_after_min(t_list **stack_a, t_list **stack_b)
+/*static void	push_index_1(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*current;
 	int		pos;
 
 	current = *stack_a;
-	pos = find_index_position(stack_a, 4);
+	pos = find_index_position(stack_a, 1);
 	if (pos == 1)
 		sa(stack_a);
 	else if (pos == 2)
@@ -34,10 +34,10 @@ static void	push_bigger_after_min(t_list **stack_a, t_list **stack_b)
 	else if (pos == 4)
 		rra(stack_a);
 	pb(stack_a, stack_b);
-}
-
+}*/
+/*
 static void	sort_mandatory(t_list **stack_a, t_list **stack_b)
-{
+
 	pb(stack_a, stack_b);
 	push_bigger_after_min(stack_a, stack_b);
 	sort_three(stack_a);
@@ -46,18 +46,16 @@ static void	sort_mandatory(t_list **stack_a, t_list **stack_b)
 	pa(stack_b, stack_a);
 	ra(stack_a);
 }
-
+*/
 void	sort_five(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*current;
 	t_list	*b;
 	int		pos;
-	int		pos2;
 
 	current = *stack_a;
 	b = *stack_b;
 	pos = find_index_position(stack_a, 0);
-	pos2 = find_index_position(stack_a, 1);
 	if (pos == 1)
 		sa(stack_a);
 	else if (pos == 2)
@@ -72,7 +70,8 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 	}
 	else if (pos == 4)
 		rra(stack_a);
-	sort_mandatory(stack_a, stack_b);
+	sort_four(stack_a, stack_b);
+	//sort_mandatory(stack_a, stack_b);
 }
 /*
 int main()

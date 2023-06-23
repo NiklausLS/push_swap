@@ -6,11 +6,13 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 07:40:38 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 08:41:31 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/23 13:50:00 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <sys/types.h>
+
 
 int main(int argc, char **argv)
 {
@@ -25,12 +27,16 @@ int main(int argc, char **argv)
 	*stack_b = NULL;
 
 	checking_all(argc, argv);
-
 	initialisation(argc, argv, stack_a);
-
+	indexation(stack_a);
 	sort_all(stack_a, stack_b);
 
-	free(stack_a);
-	free(stack_b);
+//	printing(*stack_a);
+//	printing(*stack_b);
+
+	free_node(stack_a);
+	free_node(stack_b);
+
+	system("leaks push_swap");
 	return (0);
 }
