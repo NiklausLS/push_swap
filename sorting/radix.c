@@ -6,12 +6,29 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 08:06:35 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 13:37:43 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 14:54:30 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-/*
+
+//get the biggest index in my stack
+static int	find_max_index(t_list **stack)
+{
+	t_list *current;
+	int		max;
+
+	current = *stack;
+	max = current->index;
+	while (current)
+	{
+		if (current->index > max)
+			max = current->index;
+		current = current->next;
+	}
+	return (max);
+}
+
 //get the number of bits i need for radix
 static int	get_bits(t_list **stack)
 {
@@ -20,8 +37,8 @@ static int	get_bits(t_list **stack)
 	int	max;
 
 	max_bits = 0;
-	min = get_min_data(stack);
-	max = get_max_data(stack);
+	min = 0;
+	max = find_max_index(stack);
 	while (max >> max_bits > 0)
 		max_bits++;
 	return (max_bits);
@@ -37,18 +54,12 @@ static void	sort_bits(t_list **stack_a, t_list **stack_b)
 	while (i < ft_lstsize(*stack_a))
 	{
 		current = *stack_a;
-		if (((current->data >> i) & 1) == 1)
+		if (((current->index >> i) & 1) == 1)
 			ra(stack_a);
 		else
 			pb(stack_a, stack_b);
 		i++;
 	}
-}
-
-static void	empty_b(t_list **stack_a, t_list **stack_b)
-{
-	while (*stack_b != NULL)
-		pa(stack_b, stack_a);
 }
 
 void	radix(t_list **stack_a, t_list **stack_b)
@@ -65,10 +76,12 @@ void	radix(t_list **stack_a, t_list **stack_b)
 	while (bit_index < max_bits)
 	{
 		sort_bits(stack_a, stack_b);
-		empty_b(stack_a, stack_b);
+		while (stack_b)
+			pa(stack_b, stack_a);
 		bit_index++;
 	}
-}*/
+}
+
 /*
 int main()
 {

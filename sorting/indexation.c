@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_utils.c                                      :+:      :+:    :+:   */
+/*   indexation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 17:38:05 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 08:59:04 by nileempo         ###   ########.fr       */
+/*   Created: 2023/06/24 14:35:45 by nileempo          #+#    #+#             */
+/*   Updated: 2023/06/24 14:35:51 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//find the lowest data in my chained list ans return a ptr
+//find the lowest data in my chained list and return a ptr
 static t_list	*find_min_data(t_list **stack)
 {
 	t_list	*current;

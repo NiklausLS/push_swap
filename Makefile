@@ -6,7 +6,7 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 11:04:26 by nileempo          #+#    #+#              #
-#    Updated: 2023/06/24 13:07:57 by nileempo         ###   ########.fr        #
+#    Updated: 2023/06/24 14:36:24 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ SRC = 	main.c \
 		./moving/push.c \
 		./moving/rotate.c \
 		./moving/reverse_rotate.c \
+		./sorting/indexation.c \
 		./sorting/radix.c \
-		./sorting/radix_utils.c \
 		./sorting/sort_two.c \
 		./sorting/sort_three.c \
 		./sorting/sort_four.c \

@@ -12,8 +12,6 @@
 
 #include "../push_swap.h"
 
-//sorts 132 213 231 312 321
-
 void	sort_three(t_list **stack)
 {
 	t_list	*first;
