@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 07:40:38 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 12:54:21 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 13:26:50 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,10 @@ int	main(int argc, char **argv)
 	initialisation(argc, argv, stack_a);
 	indexation(stack_a);
 	sort_all(stack_a, stack_b);
+	if (stack_a)
+		free_stack(stack_a);
+	if (stack_a)
+		free_stack(stack_b);
+	system("leaks push_swap");
 	return (0);
 }

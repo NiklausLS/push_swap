@@ -6,12 +6,11 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 09:21:08 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 16:50:21 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 13:19:19 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <sys/types.h>
 
 void	initialisation(int argc, char **argv, t_list **stack)
 {

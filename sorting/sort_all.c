@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 12:57:51 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 13:03:07 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 13:27:48 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,9 @@ void	sort_all(t_list **stack_a, t_list **stack_b)
 	else if (size == 3)
 		sort_three(stack_a);
 	else if (size == 4)
-	{
 		sort_four(stack_a, stack_b, i);
-		free(stack_b);
-	}
 	else if (size == 5)
-	{
-		sort_five(stack_a, stack_b, i);
-		free(stack_b);
-	}
+		sort_five(stack_a, stack_b);
 	free(stack_a);
 }
 

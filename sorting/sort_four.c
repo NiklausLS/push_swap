@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:24:43 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 08:32:47 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 13:26:12 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	sort_four(t_list **stack_a, t_list **stack_b, int i)
 	sort_three(stack_a);
 	pa(stack_b, stack_a);
 }
+
 /*
 int main()
 {
