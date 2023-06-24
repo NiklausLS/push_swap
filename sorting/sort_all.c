@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 12:57:51 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 17:51:39 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 18:15:00 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ static void	sort_tiny(t_list **stack_a, t_list **stack_b)
 		sort_four(stack_a, stack_b, i);
 	else if (size == 5)
 		sort_five(stack_a, stack_b);
-/*	else if (size > 5)
-		sort_radix(stack_a, stack_b);*/
 	free(stack_a);
 }
 
@@ -41,6 +39,8 @@ void	sort_all(t_list **stack_a, t_list **stack_b)
 	int	size;
 
 	size = ft_lstsize(*stack_a);
+	if (size == 0 || size == 1 || (check_sorting(*stack_a)))
+		return ;
 	if (size <= 5)
 		sort_tiny(stack_a, stack_b);
 	else
