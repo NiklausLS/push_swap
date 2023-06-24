@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
-# include <limits.h>
 # include "Libft/libft.h"
 
 int		main(int argc, char **argv);
