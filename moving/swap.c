@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
+#include <.h>
 
 //SA : REVERSE 2 FIRST ELEMENTS IN STACK A
 //
