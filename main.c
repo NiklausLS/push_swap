@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 07:40:38 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 16:48:03 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 08:35:41 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 		return (0);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
+
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_b = NULL;
 	checking_all(argc, argv);
@@ -33,12 +34,14 @@ int main(int argc, char **argv)
 
 	sort_all(stack_a, stack_b);
 
-//	printing(*stack_a);
-//	printing(*stack_b);
+/*	printf("A\n");
+	printing(*stack_a);
+	printf("B\n");
+	printing(*stack_b);*/
 
-	free_node(stack_a);
-	free_node(stack_b);
+//	free_node(stack_a);
+//	free_node(stack_b);
 
-	system("leaks push_swap");
+//	system("leaks push_swap");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 06:18:51 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/22 13:26:13 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 08:19:56 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	ra(t_list **stack_a)
 	t_list	*last;
 
 	first = *stack_a;
-	*stack_a = first->next;
 	last = ft_lstlast(*stack_a);
-	last->next = first;
+	*stack_a = first->next;
 	first->next = NULL;
+	last->next = first;
 	write(1, "ra\n", 3);
 }
 

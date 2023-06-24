@@ -1,43 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   freeing.c                                          :+:      :+:    :+:   */
+/*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/23 12:27:19 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 08:22:41 by nileempo         ###   ########.fr       */
+/*   Created: 2023/05/30 09:02:24 by nileempo          #+#    #+#             */
+/*   Updated: 2023/06/24 08:11:21 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	free_split(char **split)
+int	check_nbr(char *argv)
 {
 	int	i;
 
 	i = 0;
-	while (split[i])
+	if (argv[0] == '-')
 		i++;
-	while (i >= 0)
+	while (argv[i])
 	{
-		free(split[i]);
-		i--;
+		if (!ft_isdigit(argv[i]))
+			error_stderr();
+		i++;
 	}
-	free(split);
+	return (0);
 }
 
-void	free_stack(t_list **stack)
+int	check_minmax(long nbr)
 {
-	t_list	*current;
-	t_list	*next_node;
+	if (nbr > 2147483647 || nbr < -2147483648)
+		error_stderr();
+	return (0);
+}
 
-	current = *stack;
-	while (current)
+int	check_doubles(char **argv, long nbr, int index)
+{
+	int	i;
+
+	i = index + 1;
+	while (argv[i])
 	{
-		next_node = current->next;
-		free(current);
-		current = next_node;
+		if (ft_atoi(argv[i]) == nbr)
+			error_stderr();
+		i++;
 	}
-//	free(stack);
+	return (0);
 }

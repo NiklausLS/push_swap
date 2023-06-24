@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   freeing.c                                          :+:      :+:    :+:   */
+/*   check_all.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/23 12:27:19 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 08:22:41 by nileempo         ###   ########.fr       */
+/*   Created: 2023/06/23 07:45:01 by nileempo          #+#    #+#             */
+/*   Updated: 2023/06/24 08:14:26 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	free_split(char **split)
+void	checking_all(int argc, char **argv)
 {
-	int	i;
+	long	nbr;
+	int		i;
+	char	**check;
 
-	i = 0;
-	while (split[i])
+	nbr = 0;
+	i = 1;
+	if (argc == 2)
+		check = check_one_arg(argv[i]);
+	else
+		check = argv;
+	while (check[i])
+	{
+		check_nbr(check[i]);
+		nbr = ft_atoi(check[i]);
+		check_minmax(nbr);
+		check_doubles(check, nbr, i);
 		i++;
-	while (i >= 0)
-	{
-		free(split[i]);
-		i--;
 	}
-	free(split);
-}
-
-void	free_stack(t_list **stack)
-{
-	t_list	*current;
-	t_list	*next_node;
-
-	current = *stack;
-	while (current)
-	{
-		next_node = current->next;
-		free(current);
-		current = next_node;
-	}
-//	free(stack);
+	if (argc == 2)
+		free_split(check);
+//	free_stack(check);
 }

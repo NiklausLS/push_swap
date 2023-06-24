@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 16:38:12 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 08:23:45 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	initialisation(int argc, char **argv, t_list **stack);
 
 //free
 void	free_split(char **split);
-void	free_node(t_list **stack);
+void	free_stack(t_list **stack);
 void	free_one_arg(int argc, char **split);
 
 //check errors

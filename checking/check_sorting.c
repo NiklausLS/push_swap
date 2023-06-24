@@ -1,43 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   freeing.c                                          :+:      :+:    :+:   */
+/*   check_sorting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/23 12:27:19 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 08:22:41 by nileempo         ###   ########.fr       */
+/*   Created: 2023/06/09 16:02:57 by nileempo          #+#    #+#             */
+/*   Updated: 2023/06/24 08:11:58 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	free_split(char **split)
+//check if my stack_a is already sorted to avoid the program to infinite loop
+int	check_sorting(t_list *stack)
 {
-	int	i;
-
-	i = 0;
-	while (split[i])
-		i++;
-	while (i >= 0)
+	while (stack && stack->next)
 	{
-		free(split[i]);
-		i--;
+		if (stack->data > stack->next->data)
+			return (0);
+		stack = stack->next;
 	}
-	free(split);
-}
-
-void	free_stack(t_list **stack)
-{
-	t_list	*current;
-	t_list	*next_node;
-
-	current = *stack;
-	while (current)
-	{
-		next_node = current->next;
-		free(current);
-		current = next_node;
-	}
-//	free(stack);
+	return (1);	
 }

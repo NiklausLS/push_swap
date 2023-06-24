@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 11:59:44 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 09:58:51 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 08:24:02 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,30 @@
 
 void	sort_three(t_list **stack)
 {
-	if (((*stack)->index < (*stack)->next->index)
-		&& ((*stack)->next->index > (*stack)->next->next->index)
-		&& ((*stack)->index < (*stack)->next->next->index))
+	t_list *first = *stack;
+	t_list *second = (*stack)->next;
+	t_list *third = (*stack)->next->next;
+
+	if ((first->index < second->index) && (second->index > third->index)
+		&& (first->index < third->index))
 	{
 		rra(stack);
 		sa(stack);
 	}
-	else if (((*stack)->index > (*stack)->next->index)
-		&& ((*stack)->next->index < (*stack)->next->next->index))
-		ra(stack);
-	else if (((*stack)->index < (*stack)->next->index)
-		&& ((*stack)->index > ((*stack)->next->next->index)))
+	else if ((first->index > second->index) && (first->index < third->index))
+		sa(stack);
+	else if ((first->index > second->index) && (second->index < third->index)
+		&& (first->index > third->index))
+		ra(stack); 
+	else if ((first->index < second->index) && (first->index > third->index))
 		rra(stack);
-	else if (((*stack)->index > (*stack)->next->index)
-		&& ((*stack)->next->index > (*stack)->next->next->index))
+	else if ((first->index > second->index) && (second->index > third->index))
 	{
 		ra(stack);
 		sa(stack);
 	}
 }
+
 /*
 int main()
 {
@@ -69,7 +73,7 @@ int main()
 	}
 	stack_a = a1;
 //	while (!check_sorting(stack_a))
-	sort_three(&stack_a);
+	sort_three(stack_a);
 	printf("AFTER SORTING\n");
 	while (stack_a)
 	{

@@ -6,16 +6,16 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 11:04:26 by nileempo          #+#    #+#              #
-#    Updated: 2023/06/23 12:30:36 by nileempo         ###   ########.fr        #
+#    Updated: 2023/06/24 07:14:18 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = 	main.c \
 	  	init_stack.c \
-	  	./errors_checking/check_errors.c \
-		./errors_checking/check_sorting.c \
-		./errors_checking/check_others.c \
-		./errors_checking/check_all.c \
+	  	./checking/check_errors.c \
+		./checking/check_sorting.c \
+		./checking/check_others.c \
+		./checking/check_all.c \
 		./printing/print_error.c \
 		./moving/swap.c \
 		./moving/push.c \
