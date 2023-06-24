@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 08:06:35 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 17:06:04 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 17:32:26 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //get the biggest index in my stack
 static int	find_max_index(t_list **stack)
 {
-	t_list *current;
+	t_list	*current;
 	int		max;
 
 	current = *stack;
@@ -57,16 +57,15 @@ void	sort_radix(t_list **stack_a, t_list **stack_b)
 	while (i < max_bits)
 	{
 		j = 0;
-		while (j < size)
+		while (j++ < size)
 		{
 			current = *stack_a;
 			if ((((current->index >> i)) & 1) == 1)
 				ra(stack_a);
 			else
 				pb(stack_b, stack_a);
-			j++;
 		}
-		while(ft_lstsize(*stack_b) > 0)
+		while (ft_lstsize(*stack_b) > 0)
 			pa(stack_a, stack_b);
 		i++;
 	}
