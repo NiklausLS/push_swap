@@ -12,29 +12,31 @@
 
 #include "../push_swap.h"
 
-void	checking_all(int argc, char **argv)
+void	checking_all(char **argv)
 {
 	long	nbr;
 	int		i;
+	int		j;
 	char	**check;
 
 	nbr = 0;
 	i = 1;
-	if (argc == 2)
+	while (argv[i])
 	{
-		check = check_one_arg(argv[i]);
-		i = 0;
-	}
-	else
-		check = argv;
-	while (check[i])
-	{
-		check_nbr(check[i]);
-		nbr = ft_atoi(check[i]);
-		check_minmax(nbr);
-		check_doubles(check, nbr, i);
+		check = ft_split(argv[i], ' ');
+		if (check == NULL)
+			error_stderr();
+		else if (check[0] == NULL)
+			free(check);
+		j = 0;
+		while (check[j++])
+		{
+			check_nbr(check[j]);
+			nbr = ft_atoi(check[j]);
+			check_minmax(nbr);
+			check_doubles(check, nbr, j);
+		}
+		free_split(check);
 		i++;
 	}
-	if (argc == 2)
-		free_split(check);
 }

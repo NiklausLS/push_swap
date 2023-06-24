@@ -13,7 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h>
 # include "Libft/libft.h"
 
 int		main(int argc, char **argv);
@@ -29,7 +28,7 @@ int		check_nbr(char *argv);
 int		check_minmax(long nbr);
 int		check_doubles(char **argv, long nbr, int index);
 char	**check_one_arg(char *argv);
-void	checking_all(int argc, char **argv);
+void	checking_all(char **argv);
 int		check_sorting(t_list *stack);
 
 //print error on sdterr
