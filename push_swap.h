@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 18:36:03 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 18:47:24 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,4 @@ void	indexation(t_list **stack);
 int		find_min_index(t_list **stack);
 int		find_index_position(t_list **stack);
 
-//use to printf what's inside my stacks
-//void	printing(t_list *stack);
-//void    print_index(t_list *stack);
-//void    print_data(t_list *stack);
 #endif
