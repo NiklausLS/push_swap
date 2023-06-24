@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 07:45:01 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 08:14:26 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 12:57:59 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,4 @@ void	checking_all(int argc, char **argv)
 	}
 	if (argc == 2)
 		free_split(check);
-//	free_stack(check);
 }

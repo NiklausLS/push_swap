@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 11:59:53 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 08:58:28 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 13:03:58 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 			pb(stack_b, stack_a);
 		else
 			ra(stack_a);
-		}
-	//push_index(stack_a, stack_b);
+	}
 	sort_four(stack_a, stack_b, 1);
 	pa(stack_b, stack_a);
-	//pa(stack_b, stack_a);
 }
 
 /*

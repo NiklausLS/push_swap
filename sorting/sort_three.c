@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 11:59:44 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 08:24:02 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 13:05:54 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@
 
 void	sort_three(t_list **stack)
 {
-	t_list *first = *stack;
-	t_list *second = (*stack)->next;
-	t_list *third = (*stack)->next->next;
+	t_list	*first;
+	t_list	*second;
+	t_list	*third;
 
+	first = *stack;
+	second = (*stack)->next;
+	third = (*stack)->next->next;
 	if ((first->index < second->index) && (second->index > third->index)
 		&& (first->index < third->index))
 	{
@@ -30,7 +33,7 @@ void	sort_three(t_list **stack)
 		sa(stack);
 	else if ((first->index > second->index) && (second->index < third->index)
 		&& (first->index > third->index))
-		ra(stack); 
+		ra(stack);
 	else if ((first->index < second->index) && (first->index > third->index))
 		rra(stack);
 	else if ((first->index > second->index) && (second->index > third->index))

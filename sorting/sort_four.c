@@ -12,11 +12,6 @@
 
 #include "../push_swap.h"
 
-//check for min data
-//push it to b
-//sort the last 3
-//then push min in top of a
-
 void	sort_four(t_list **stack_a, t_list **stack_b, int i)
 {
 	while (!check_sorting(*stack_a) && ft_lstsize(*stack_a) > 3)

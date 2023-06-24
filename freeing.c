@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 12:27:19 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 08:22:41 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 12:52:57 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,4 @@ void	free_stack(t_list **stack)
 		free(current);
 		current = next_node;
 	}
-//	free(stack);
 }

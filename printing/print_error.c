@@ -6,18 +6,19 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 13:48:42 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 09:27:06 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 12:59:26 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	error_stderr()
+void	error_stderr(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
 }
 
+/*
 void	printing(t_list *stack)
 {
 	t_list	*tmp;
@@ -53,4 +54,4 @@ void	print_data(t_list *stack)
 		printf("data = %d\n", tmp->data);
 		tmp = tmp->next;
 	}
-}
+}*/

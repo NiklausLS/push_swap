@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:02:57 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 08:11:58 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 12:58:34 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	check_sorting(t_list *stack)
 			return (0);
 		stack = stack->next;
 	}
-	return (1);	
+	return (1);
 }
