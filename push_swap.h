@@ -43,9 +43,9 @@ void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
 void	ss(t_list **stack_a, t_list **stack_b);
 
-//push two
-void	pa(t_list **stack_b, t_list **stack_a);
-void	pb(t_list **stack_a, t_list **stack_b);
+//push to other stack
+void	pa(t_list **dest, t_list **src);
+void	pb(t_list **dest, t_list **src);
 
 //rotate
 void	ra(t_list **stack_a);
@@ -60,7 +60,7 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 //my functions to sort stacks
 void	sort_two(t_list **stack);
 void	sort_three(t_list **stack);
-void	sort_four(t_list **stack_a, t_list **stack_b);	
+void	sort_four(t_list **stack_a, t_list **stack_b, int i);	
 void	sort_five(t_list **stack_a, t_list **stack_b);
 //void	radix(t_list **stack_a, t_list **stack_b);
 void	sort_all(t_list **stack_a, t_list **stack_b);
@@ -68,7 +68,8 @@ void	sort_all(t_list **stack_a, t_list **stack_b);
 //utils for sorting
 void	indexation(t_list **stack);
 int     find_min_index(t_list **stack);
-int		find_index_position(t_list **stack, int index);
+int		find_index_position(t_list **stack);
+//void    push_index(t_list **stack_a, t_list **stack_b);
 //t_list  *find_min(t_list **stack);
 //t_list  *find_next_min(t_list **stack, t_list **last_min);
 

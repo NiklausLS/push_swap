@@ -17,23 +17,15 @@
 //sort the last 3
 //then push min in top of a
 
-void	sort_four(t_list **stack_a, t_list **stack_b)
+void	sort_four(t_list **stack_a, t_list **stack_b, int i)
 {
-	t_list	*current;
-	int		pos;
-
-	current = *stack_a;
-	pos = find_index_position(stack_a, 1);
-	if (pos == 1)
-		sa(stack_a);
-	else if (pos == 2)
+	while (!check_sorting(*stack_a) && ft_lstsize(*stack_a) > 3)
 	{
-		ra(stack_a);
-		sa(stack_a);
+		if ((*stack_a)->index == i)
+			pb(stack_b, stack_a);
+		else
+			ra(stack_a);
 	}
-	else if (pos == 3)
-		rra(stack_a);
-	pb(stack_a, stack_b);
 	sort_three(stack_a);
 	pa(stack_b, stack_a);
 }

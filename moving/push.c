@@ -27,15 +27,15 @@ static void	push(t_list **dest, t_list **src)
 	*src = tmp;
 }
 
-void	pa(t_list **stack_a, t_list **stack_b)
+void	pa(t_list **dest, t_list **src)
 {
-	push(stack_b, stack_a);
+	push(dest, src);
 	write(1, "pa\n", 3);
 }
 
-void	pb(t_list **stack_b, t_list **stack_a)
+void	pb(t_list **dest, t_list **src)
 {
-	push(stack_a, stack_b);
+	push(dest, src);
 	write(1, "pb\n", 3);
 }
 

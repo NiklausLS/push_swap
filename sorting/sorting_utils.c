@@ -6,47 +6,83 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 14:28:18 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/23 08:23:21 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 08:58:49 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//check the position of my nodes by using the index as parameter
-//and returns it
-int	find_index_position(t_list **stack, int index)
-{
-	t_list	*current;
-	int		pos;
-
-	current = *stack;
-	pos = 0;
-	while (current)
-	{
-		if (current->index == index)
-			break ;
-		pos++;
-		current = current->next;
-	}
-	return (pos);
-}
-
 //check the tinyest index in the stack
 int	find_min_index(t_list **stack)
 {
 	t_list	*current;
-	t_list	*min;
+	t_list	*min_current;
+	int		min;
 
 	current = *stack;
-	min = *stack;
+	min_current = *stack;
+	min = min_current->index;
 	while (current)
 	{
-		if (current->index < min->index)
-			min->index = current->index;
+		if (current->index < min_current->index)
+		{
+			min_current->index = current->index;
+			min_current->data = current->data;
+		}
 		current = current->next;
 	}
-	return (min->index);
+	min = min_current->index;
+	return (min);
 }
+
+//check the position of a particular index in my stack
+int	find_index_position(t_list **stack)
+{
+	t_list	*current;
+	int		pos;
+	int		min;
+
+	current = *stack;
+	pos = 0;
+	min = find_min_index(&current);
+	printf("min = %d\n", min);
+	while (current)
+	{
+		printf("test boucle\n");
+		printf("current->data = %d | current->index = %d\n", current->data, current->index);
+		if (current->index != min)
+		{
+			current = current->next;
+			pos++;
+		}
+		else
+			break ;
+	}
+	printf("pos = %d\n", pos);
+	return (pos);
+}
+/*
+void	push_index(t_list **stack_a, t_list **stack_b)
+{
+	int		pos;
+
+	pos = find_index_position(stack_a);
+	if (pos == 1)
+		sa(stack_a);
+	else if (pos == 2)
+	{
+		ra(stack_a);
+		sa(stack_a);
+	}
+	else if (pos == 3)
+	{
+		rra(stack_a);
+		rra(stack_a);
+	}
+	else if (pos == 4)
+		rra(stack_a);
+	pb(stack_a, stack_b);
+}*/
 
 /*
 int	find_max_index(t_list **stack)
@@ -68,6 +104,7 @@ int	find_max_index(t_list **stack)
 int main()
 {
 	t_list	*stack_a = NULL;
+	t_list	*stack_b = NULL;
 
 	t_list *a1 = malloc(sizeof(t_list));
 	t_list *a2 = malloc(sizeof(t_list));
@@ -81,11 +118,11 @@ int main()
     a4->data = 4;
     a5->data = 1;
 
-    a1->index = -1;
-    a2->index = -1;
+    a1->index = 0;
+    a2->index = 2;
     a3->index = 4;
-    a4->index = -1;
-    a5->index = -1;
+    a4->index = 1;
+    a5->index = 3;
 
 	a1->next = a2;
 	a2->next = a3;
@@ -94,10 +131,25 @@ int main()
     a5->next = NULL;
     stack_a = a1;
 
-    indexation(&stack_a);
+	printing(stack_a);
+	//int min = find_min_index(&stack_a);
+	printf("---BEFORE PUSH---\n");
+	//printf("min index = %d\n", min);
+	int pos = find_index_position(&stack_a);
+	//printf("index position = %d\n", pos);
+	pa(&stack_a, &stack_b);
+	printing(stack_a);
+	printf("---AFTER PUSH---\n");
+	//min = find_min_index(&stack_a);
+	//printf("min index = %d\n", min);
+	pos = find_index_position(&stack_a);
+	//printf("index position = %d\n", pos);
+	
+ //   indexation(&stack_a);
     //int a = find_min_index(&stack_a);
-	int pos = find_index_position(&stack_a, 4);
-    printf("a = %d", pos);
+	//int min = find_min_index(&stack_a);
+    //printf("a = %d", min);
 
 	return (0);
-}*/
+}
+*/

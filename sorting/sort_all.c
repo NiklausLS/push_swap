@@ -16,9 +16,11 @@ void	sort_all(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 	int	check;
+	int	i;
 
 	size = ft_lstsize(*stack_a);
 	check = check_sorting(*stack_a);
+	i = 0;
 	if (check == 1)
 		return ;
 	if (size == 2)
@@ -33,13 +35,13 @@ void	sort_all(t_list **stack_a, t_list **stack_b)
 	}
 	else if (size == 4)
 	{
-		sort_four(stack_a, stack_b);
+		sort_four(stack_a, stack_b, i);
 		free_stack(stack_a);
 		free_stack(stack_b);
 	}
 	else if (size == 5)
 	{
-		sort_five(stack_a, stack_b);
+		sort_five(stack_a, stack_b, i);
 		free_stack(stack_a);
 		free_stack(stack_b);
 	}

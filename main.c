@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 
 	sort_all(stack_a, stack_b);
 
-/*	printf("A\n");
+	/*printf("A\n");
 	printing(*stack_a);
 	printf("B\n");
 	printing(*stack_b);*/
