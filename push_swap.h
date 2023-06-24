@@ -16,7 +16,7 @@
 # include "Libft/libft.h"
 
 int		main(int argc, char **argv);
-void	initialisation(int argc, char **argv, t_list **stack);
+void	initialisation(char **argv, t_list **stack);
 
 //free
 void	free_split(char **split);

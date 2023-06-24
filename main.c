@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 07:40:38 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 20:58:18 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 21:42:18 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_b = NULL;
 	checking_all(argv);
-	initialisation(argc, argv, stack_a);
+	initialisation(argv, stack_a);
 	indexation(stack_a);
 	sort_all(stack_a, stack_b);
 	if (stack_a)

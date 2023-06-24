@@ -12,30 +12,25 @@
 
 #include "push_swap.h"
 
-void	initialisation(int argc, char **argv, t_list **stack)
+void	initialisation(char **argv, t_list **stack)
 {
 	t_list	*new;
 	int		i;
 	char	**str;
 
-	if (argc == 2)
-	{
-		str = ft_split(argv[1], ' ');
-		i = 0;
-	}
-	else
-	{
-		str = argv;
-		i = 1;
-	}
+	str = ft_split(argv[1], ' ');
+	i = 0;
+	if (str == NULL)
+		error_stderr();
+	else if (str[0] == NULL)
+		free(str);
 	while (str[i])
 	{
 		new = ft_lstnew(ft_atoi(str[i]));
 		ft_lstadd_back(stack, new);
 		i++;
 	}
-	if (argc == 2)
-		free_split(str);
+	free_split(str);
 }
 
 /*

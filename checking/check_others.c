@@ -13,13 +13,13 @@
 #include "../push_swap.h"
 
 //check if there is only one arguments and split it in many
-char	**check_one_arg(char *argv)
+/*char	**check_one_arg(char *argv)
 {
 	char	**split;
 
 	split = ft_split(argv, ' ');
 	return (split);
-}
+}*/
 
 /*int main(int argc, char **argv)
 {

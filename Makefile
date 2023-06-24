@@ -6,7 +6,7 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 11:04:26 by nileempo          #+#    #+#              #
-#    Updated: 2023/06/24 18:45:56 by nileempo         ###   ########.fr        #
+#    Updated: 2023/06/24 21:14:29 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ H = push_swap.h
 
 RM = rm -f
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra #-fsanitize=address
 
 NAME = push_swap
 
@@ -51,7 +51,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 		$(MAKE) -C $(LIBFT)
-		$(CC) $(CFLAGS) $(OBJ) -I $(H) ./Libft/libft.a -o $(NAME)
+		$(CC) $(FLAGS) $(OBJ) -I $(H) ./Libft/libft.a -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)
