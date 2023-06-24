@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 13:48:42 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 12:59:26 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 16:50:59 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	error_stderr(void)
 	exit(1);
 }
 
-/*
+
 void	printing(t_list *stack)
 {
 	t_list	*tmp;
@@ -31,7 +31,7 @@ void	printing(t_list *stack)
 	}
 	printf("\n");
 }
-
+/*
 void	print_index(t_list *stack)
 {
 	t_list	*tmp;

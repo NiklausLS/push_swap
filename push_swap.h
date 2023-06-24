@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:22:04 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 12:57:30 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 16:51:28 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	sort_two(t_list **stack);
 void	sort_three(t_list **stack);
 void	sort_four(t_list **stack_a, t_list **stack_b, int i);	
 void	sort_five(t_list **stack_a, t_list **stack_b);
-//void	radix(t_list **stack_a, t_list **stack_b);
+void	sort_radix(t_list **stack_a, t_list **stack_b);
 void	sort_all(t_list **stack_a, t_list **stack_b);
 
 //utils for sorting
@@ -70,7 +70,8 @@ int		find_min_index(t_list **stack);
 int		find_index_position(t_list **stack);
 
 //use to printf what's inside my stacks
-/*void	printing(t_list *stack);
-void    print_index(t_list *stack);
-void    print_data(t_list *stack);*/
+void	printing(t_list *stack);
+
+//void    print_index(t_list *stack);
+//void    print_data(t_list *stack);
 #endif

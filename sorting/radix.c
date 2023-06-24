@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 08:06:35 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 14:54:30 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 17:06:04 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,52 +33,42 @@ static int	find_max_index(t_list **stack)
 static int	get_bits(t_list **stack)
 {
 	int	max_bits;
-	int min;
 	int	max;
 
 	max_bits = 0;
-	min = 0;
 	max = find_max_index(stack);
 	while (max >> max_bits > 0)
 		max_bits++;
 	return (max_bits);
 }
 
-static void	sort_bits(t_list **stack_a, t_list **stack_b)
+void	sort_radix(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*current;
-	int		i;
-	
-	current = *stack_a;
-	i = 0;
-	while (i < ft_lstsize(*stack_a))
-	{
-		current = *stack_a;
-		if (((current->index >> i) & 1) == 1)
-			ra(stack_a);
-		else
-			pb(stack_a, stack_b);
-		i++;
-	}
-}
-
-void	radix(t_list **stack_a, t_list **stack_b)
-{
-	t_list	*current;
-	int		max_data;
 	int		max_bits;
-	int		bit_index;
+	int		i;
+	int		j;
+	int		size;
 
 	current = *stack_a;
-//	max_data = get_max_data(stack_a);
 	max_bits = get_bits(stack_a);
-	bit_index = 0;
-	while (bit_index < max_bits)
+	i = 0;
+	size = ft_lstsize(*stack_a);
+	while (i < max_bits)
 	{
-		sort_bits(stack_a, stack_b);
-		while (stack_b)
-			pa(stack_b, stack_a);
-		bit_index++;
+		j = 0;
+		while (j < size)
+		{
+			current = *stack_a;
+			if ((((current->index >> i)) & 1) == 1)
+				ra(stack_a);
+			else
+				pb(stack_b, stack_a);
+			j++;
+		}
+		while(ft_lstsize(*stack_b) > 0)
+			pa(stack_a, stack_b);
+		i++;
 	}
 }
 
@@ -117,7 +107,6 @@ int main()
 
 	printf("---- radix sort ----\n");
 	radix(&stack_a, &stack_b);
-	print_stack(stack_a);
 
 	free(a1);
 	free(a2);
