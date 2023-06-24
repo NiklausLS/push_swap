@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 07:45:01 by nileempo          #+#    #+#             */
-/*   Updated: 2023/06/24 13:16:20 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/06/24 19:42:12 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ void	checking_all(int argc, char **argv)
 	nbr = 0;
 	i = 1;
 	if (argc == 2)
+	{
 		check = check_one_arg(argv[i]);
+		i = 0;
+	}
 	else
 		check = argv;
 	while (check[i])
